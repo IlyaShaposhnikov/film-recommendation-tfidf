@@ -53,18 +53,23 @@ project/
 4.  Запустите систему рекомендаций:
 
     ```bash
-    python main.py
+    # Система рекомендаций фильмов на основе жанров и ключевых слов
+    python film_recommendation.py
+    # Система рекомендаций фильмов на основе актерского состава
+    python actor_based_film_recommendation.py
     ```
 
 5.  Для изучения работы алгоритма:
 
     ```bash
+    # Наглядные примеры для демонстрации теории TF-IDF
     python learning_examples.py
+    python actor_based_learning_examples.py
     ```
 
 ## Использование
 
-1.  Запустите `python main.py`
+1.  Запустите `python film_recommendation.py`
 2.  Выберите опцию "Поиск фильмов для получения рекомендаций"
 3.  Введите часть названия фильма (минимум 3 буквы)
 4.  Выберите фильм из списка результатов

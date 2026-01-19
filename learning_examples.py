@@ -7,7 +7,6 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import json
-import numpy as np
 from pathlib import Path
 
 # Создаем папку для визуализаций обучения

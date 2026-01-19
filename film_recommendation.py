@@ -2,7 +2,6 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import json
-import os
 from pathlib import Path
 
 from sklearn.feature_extraction.text import TfidfVectorizer
@@ -180,7 +179,7 @@ def interactive_recommendation_system():
 
         if choice == '1':
             # Поиск фильмов
-            search_term = input("\nВведите часть названия фильма (минимум 3 буквы): ").strip()
+            search_term = input("\nВведите часть названия фильма на английском (минимум 3 буквы): ").strip()
 
             if len(search_term) < 3:
                 print("Ошибка: для поиска необходимо ввести минимум 3 символа.")

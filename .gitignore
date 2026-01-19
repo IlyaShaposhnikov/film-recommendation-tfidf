@@ -26,3 +26,6 @@ Thumbs.db
 *.png
 *.jpg
 *.jpeg
+
+# Папка с визуализациями (графиками)
+visualizations/
