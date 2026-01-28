@@ -99,4 +99,7 @@ project/
 
 **Автор:**
 Шапошников Илья
+
+https://github.com/IlyaShaposhnikov/
+
 ilia.a.shaposhnikov@gmail.com
