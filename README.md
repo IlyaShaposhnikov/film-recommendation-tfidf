@@ -38,70 +38,64 @@ film-recommendation-tfidf/
 
 ## Установка и запуск
 
-1.  Клонируйте репозиторий:
+### 1.  Клонируйте репозиторий:
+```bash
+git clone https://github.com/IlyaShaposhnikov/film-recommendation-tfidf.git
+cd film-recommendation-tfidf
+```
 
+### 2.  Создайте виртуальное окружение и установите зависимости:
+```bash
+python -m venv venv
+venv\Scripts\activate
+pip install -r requirements.txt
+```
+
+### 3.  Скачайте [исходные файлы баз данных с Kaggle](https://www.kaggle.com/tmdb/tmdb-movie-metadata):
+*   `tmdb_5000_movies.csv`
+*   `tmdb_5000_credits.csv`
+
+Поместите файлы в папку `data` в корне проекта.
+
+### 4.  Создайте и настройте Telegram бота:
+1.  Найдите @BotFather в Telegram
+2.  Отправьте команду `/newbot`
+3.  Выберите имя и `@username` для бота
+4.  Полученный токен сохраните в файлу `.env` в корне проекта (см. `.env.example`)
+5.  Настройте команды меню бота через @BotFather:
+    +  `/start` - Начать работу с ботом
+    +  `/help` - Получить помощь
+    +  `/genres` - Рекомендации по жанрам
+    +  `/actors` - Рекомендации по актерам
+
+### 5.  Запустите приложение:
+*  Telegram бот:
     ```bash
-    git clone https://github.com/IlyaShaposhnikov/film-recommendation-tfidf.git
-    cd film-recommendation-tfidf
+    python -m interfaces.telegram_bot
     ```
-
-2.  Создайте виртуальное окружение и установите зависимости:
-
-    ```bash
-    python -m venv venv
-    venv\Scripts\activate
-    pip install -r requirements.txt
-    ```
-
-3.  Скачайте [исходные файлы баз данных с Kaggle](https://www.kaggle.com/tmdb/tmdb-movie-metadata):
-    *   `tmdb_5000_movies.csv`
-    *   `tmdb_5000_credits.csv`
-
-    Поместите файлы в папку `data` в корне проекта.
-
-4.  Создайте и настройте Telegram бота:
-    1.  Найдите @BotFather в Telegram
-    2.  Отправьте команду `/newbot`
-    3.  Выберите имя и `@username` для бота
-    4.  Полученный токен сохраните в файлу `.env` в корне проекта (см. `.env.example`)
-    5.  Настройте команды меню бота через @BotFather:
-        *  `/start` - Начать работу с ботом
-        *  `/help` - Получить помощь
-        *  `/genres` - Рекомендации по жанрам
-        *  `/actors` - Рекомендации по актерам
-
-5.  Запустите приложение:
-
-    *  Telegram бот:
+*  Консольный интерфейс:
+    + Система рекомендаций фильмов на основе жанров и ключевых слов (с визуализациями)
         ```bash
-        python -m interfaces.telegram_bot
+        python interfaces/console_genres.py
+        ```
+    + Система рекомендаций фильмов на основе актерского состава
+        ```bash
+        python interfaces/console_actors.py
         ```
 
-    *  Консольный интерфейс:
-        
-        * Система рекомендаций фильмов на основе жанров и ключевых слов (с визуализациями)
-            ```bash
-            python interfaces/console_genres.py
-            ```
-        * Система рекомендаций фильмов на основе актерского состава
-            ```bash
-            python interfaces/console_actors.py
-            ```
+### 6.  Для изучения работы алгоритма (наглядные примеры для демонстрации теории TF-IDF):
+```bash
+python interfaces/demo_genres.py
+python interfaces/demo_actors.py
+```
 
-6.  Для изучения работы алгоритма (наглядные примеры для демонстрации теории TF-IDF):
-
-    ```bash
-    python interfaces/demo_genres.py
-    python interfaces/demo_actors.py
-    ```
-
-7.  Использование Telegram бота
-    1. Начало работы - отправьте команду /start
-    2. Выбор типа рекомендаций - нажмите кнопку "По жанрам" или "По актерам"
-    3. Поиск фильма - введите часть названия фильма на английском (минимум 3 буквы)
-    4. Выбор фильма - выберите номер фильма из списка
-    5. Получение рекомендаций - бот покажет топ похожих фильмов
-    6. Дополнительные действия - используйте кнопки для нового поиска или смены типа рекомендаций
+### 7.  Использование Telegram бота
+1. Начало работы - отправьте команду /start
+2. Выбор типа рекомендаций - нажмите кнопку "По жанрам" или "По актерам"
+3. Поиск фильма - введите часть названия фильма на английском (минимум 3 буквы)
+4. Выбор фильма - выберите номер фильма из списка
+5. Получение рекомендаций - бот покажет топ похожих фильмов
+6. Дополнительные действия - используйте кнопки для нового поиска или смены типа рекомендаций
 
 ## Алгоритм работы
 
