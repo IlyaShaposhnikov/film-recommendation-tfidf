@@ -2,6 +2,12 @@
 Консольный интерфейс для рекомендаций по жанрам
 (Содержит визуализации)
 """
+import sys
+import os
+
+# Добавляем корневую папку проекта в путь Python
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 from core.genres_recommender import GenresRecommender
 
 
