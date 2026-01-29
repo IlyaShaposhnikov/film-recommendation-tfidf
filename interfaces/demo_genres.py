@@ -15,7 +15,7 @@ current_dir = os.path.dirname(os.path.abspath(__file__))
 project_root = os.path.dirname(current_dir)
 
 # Создаем папку для визуализаций обучения
-learning_vis_path = Path(project_root) / 'visualizations' / 'learning'
+learning_vis_path = Path(project_root) / 'visualizations' / 'genre_based_learning'
 learning_vis_path.mkdir(parents=True, exist_ok=True)
 
 # Загрузка данных
