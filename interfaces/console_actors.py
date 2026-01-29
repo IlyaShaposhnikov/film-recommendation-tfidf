@@ -1,12 +1,6 @@
 """
 Консольный интерфейс для рекомендаций по актерам
 """
-import sys
-import os
-
-# Добавляем корневую папку проекта в путь Python
-sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-
 from core.actors_recommender import ActorsRecommender
 
 
